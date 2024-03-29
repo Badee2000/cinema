@@ -1,0 +1,29 @@
+POST http://localhost:8000/api/movies/
+Content-Type: application/json
+
+[
+  {
+    "name": "Game Of Thrones",
+    "protagonists": [
+      {"in_movie_name": "Jon Snow", "real_name": "Winter Is Coming"},
+      {"in_movie_name": "Daenerys Targaryen", "real_name": "Emilia Clarke"}
+    ],
+    "poster": "https://www.acadlly.com/wp-content/uploads/2023/07/love-again.jpg",
+    "trailer": "https://www.youtube.com/watch?v=bjqEWgDVPe0",
+    "start_date": "2024-05-27T09:45:48Z",
+    "status": "coming_up",
+    "ranking": 4
+  },
+  {
+    "name": "Spider-Man",
+    "protagonists": [
+      {"in_movie_name": "Spider-Man", "real_name": "Peter Parker"},
+      {"in_movie_name": "Green Goblin", "real_name": "Norman Osborn"}
+    ],
+    "poster": "https://i.ebayimg.com/images/g/3AEAAOSw6IVirovV/s-l500.jpg",
+    "trailer": "https://www.youtube.com/watch?v=-tnxzJ0SSOw",
+    "start_date": "2024-05-27T09:45:48Z",
+    "status": "coming_up",
+    "ranking": 3
+  }
+]

@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "cinema"
+version = "0.1.0"
+description = ""
+authors = ["Badee2000 <badeealiesmandar@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = ">=4.2,<5.0"
+django-ninja = "^1.1.0"
+celery = {extras = ["redis"], version = "^5.3.6"}
+psycopg2-binary = "^2.9.9"
+pytest = "^8.1.1"
+pillow = "^10.2.0"
+gevent = "^24.2.1"
+pytest-django = "^4.8.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
