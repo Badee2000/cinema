@@ -1,13 +1,12 @@
 ### How to start the project:
 
-1. - `poetry init`. (optional)
-   - `poetry shell`.
+1. - `poetry shell`.
    - `poetry install --no-root`.
 
-- Make sure postgreSQL is running.
+- Make sure postgreSQL is installed and works.
 
 2. - run `psql -h localhost -U postgres` in the _cmd_ to start the database.
-   - `CREATE USER admin WITH PASSWORD '1234qwer1234';` (I used `.env` file but to make it easier and ready to launch faster without creating the file _for testing only_).
+   - `CREATE USER admin WITH PASSWORD '1234qwer1234';` (I used `.env` file but to make it easier and ready to launch faster without creating the `.env` file (_for testing only_)).
    - `CREATE DATABASE cinema OWNER admin ENCODING 'UTF8';`
 
 - migrate to database. (`py manage.py makemigrations` then `py manage.py migrate`).
@@ -21,6 +20,7 @@ Type in seperate terminals (after typing poetry shell to make sure everything is
 
 Posting movies using the request.http (You need to download the REST Client extension from vscode or any related extension).
 
+Use `pytest` in the terminal to start testing.
 ### Answers:
 
 1. **Desing and implement:**
@@ -62,10 +62,10 @@ Posting movies using the request.http (You need to download the REST Client exte
 
 - To ensure reliability and fault tolerance, celery provides several solutions:
 
-      - **Retries**: If a task failed, you can configure Celery to retry the task after a certain period.
+  - **Retries**: If a task failed, you can configure Celery to retry the task after a certain period.
 
-      - **Concurrency**: Celery allows you to control the number of concurrent tasks each worker can process.
+   - **Concurrency**: Celery allows you to control the number of concurrent tasks each worker can process.
 
-      - **Result Backends**: To save task results and make sure they are not lost if a worker crashes for example, we configure a result backend. This could be a SQL database or a cache system like Redis.
+   - **Result Backends**: To save task results and make sure they are not lost if a worker crashes for example, we configure a result backend. This could be a SQL database or a cache system like Redis.
 
-      - **Acknowledgments and Task Persistence**: If a worker crashes while processing a task, the task will be returned to the queue so another worker can pick it up.
+   - **Acknowledgments and Task Persistence**: If a worker crashes while processing a task, the task will be returned to the queue so another worker can pick it up.
